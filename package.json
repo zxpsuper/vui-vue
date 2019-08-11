@@ -8,6 +8,8 @@
     "start": "webpack-dev-server --hot --open --inline --config build/webpack.dev.js --api_env botme",
     "commit": "node commit/git-commit.js",
     "build:dll": "webpack --config ./build/webpack.dll.js",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs && node ./publish.js",
     "build": "webpack --config build/webpack.prod.js"
   },
   "repository": {
@@ -62,6 +64,7 @@
   "dependencies": {
     "axios": "^0.18.1",
     "es6-promise": "^4.2.5",
+    "gh-pages": "^2.1.1",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
