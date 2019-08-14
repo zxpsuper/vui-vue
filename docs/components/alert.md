@@ -14,6 +14,7 @@
 <div slot="code">
 
 <<<@/docs/demo/alert/demo1.vue
+
 </div>
 <div slot="comp">
   <Alert>An info alert</Alert>
@@ -27,14 +28,19 @@
 
 <br>
 
-- 携带icon
+-   携带 icon
 
 根据 `type` 属性自动添加不同图标，或者自定义图标 `slot` 。
-- 添加描述
+
+<br>
+
+-   添加描述
 
 自定义 `<slot name="desc">` 描述内容。
 
-- 可关闭警告窗
+<br>
+
+-   可关闭警告窗
 
 设置`props` 属性 `closable=true`, 显示关闭按钮，点击可关闭提示，也可以自定义关闭 `slot` 。
 
@@ -42,6 +48,7 @@
 <div slot="code">
 
 <<<@/docs/demo/alert/demo2.vue
+
 </div>
 <div slot="comp">
   <Alert type="info" show-icon>A info alert</Alert>
@@ -67,10 +74,11 @@
 </demo>
 
 ## 3. Attributes
+
 <br>
 
-| 参数        | 说明           | 类型  | 可选值| 默认值|
-| :------------- |:-------------:| -----:|-----:|-----:|
-| type     | alert 类型 | string | success, info, warning, error|info |
-| closable      | 是否可关闭      |   boolean | -- |false |
-| showIcon | 是否显示icon      |    boolean | -- |false |
+| 参数     |     说明      |    类型 |                        可选值 | 默认值 |
+| :------- | :-----------: | ------: | ----------------------------: | -----: |
+| type     |  alert 类型   |  string | success, info, warning, error |   info |
+| closable |  是否可关闭   | boolean |                            -- |  false |
+| showIcon | 是否显示 icon | boolean |                            -- |  false |
