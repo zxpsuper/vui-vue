@@ -1,0 +1,55 @@
+@link-prefix-cls: ~'@{css-prefix}link';
+
+.@{link-prefix-cls} {
+    &:hover {
+        color: @primary-color;
+        text-decoration: none !important;
+    }
+    &&-default {
+        color: @text-color;
+        &:hover {
+            color: @primary-color;
+        }
+    }
+    &&-primary {
+        color: @primary-color;
+        &:hover {
+            color: ~`colorPalette('@{primary-color}', 5) `;
+        }
+    }
+    &&-success {
+        color: @success-color;
+        &:hover {
+            color: ~`colorPalette('@{success-color}', 5) `;
+        }
+    }
+    &&-warning {
+        color: @warning-color;
+        &:hover {
+            color: ~`colorPalette('@{warning-color}', 5) `;
+        }
+    }
+    &&-info {
+        color: @info-color;
+        &:hover {
+            color: ~`colorPalette('@{info-color}', 5) `;
+        }
+    }
+    &&-error {
+        color: @error-color;
+        &:hover {
+            color: ~`colorPalette('@{error-color}', 5) `;
+        }
+    }
+
+    &&-underline {
+        .@{link-prefix-cls}-inner {
+            &:hover {
+                text-decoration: underline !important;
+            }
+        }
+    }
+    &&-disabled {
+        cursor: not-allowed;
+    }
+}

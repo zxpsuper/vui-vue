@@ -1,4 +1,4 @@
-.ease-motion(@className, @keyframeName) {
+.zoom-motion(@className, @keyframeName) {
     .make-motion(@className, @keyframeName);
     .@{className}-enter-active,
     .@{className}-appear {
@@ -12,12 +12,12 @@
     }
 }
 
-.ease-motion(ease, vuEase);
+.zoom-motion(zoom, vuZoom);
 
-@keyframes vuEaseIn {
+@keyframes vuZoomIn {
     0% {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.1);
     }
     100% {
         opacity: 1;
@@ -25,13 +25,13 @@
     }
 }
 
-@keyframes vuEaseOut {
+@keyframes vuZoomOut {
     0% {
         opacity: 1;
         transform: scale(1);
     }
     100% {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.1);
     }
 }

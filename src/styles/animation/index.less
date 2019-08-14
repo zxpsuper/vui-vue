@@ -4,7 +4,8 @@
 }
 
 .make-motion(@className, @keyframeName) {
-    .@{className}-enter-active, .@{className}-appear {
+    .@{className}-enter-active,
+    .@{className}-appear {
         .motion-common();
         animation-play-state: paused;
     }
@@ -12,20 +13,22 @@
         .motion-common();
         animation-play-state: paused;
     }
-    .@{className}-enter-active, .@{className}-appear {
-        animation-name: ~"@{keyframeName}In";
+    .@{className}-enter-active,
+    .@{className}-appear {
+        animation-name: ~'@{keyframeName}In';
         animation-play-state: running;
     }
     .@{className}-leave-active {
-        animation-name: ~"@{keyframeName}Out";
+        animation-name: ~'@{keyframeName}Out';
         animation-play-state: running;
     }
 }
 
-@import "fade";
-@import "move";
-@import "ease";
-@import "slide";
+@import 'fade';
+@import 'move';
+@import 'ease';
+@import 'zoom';
+@import 'slide';
 
 // .collapse-transition {
 //     transition: @transition-time height ease-in-out, @transition-time padding-top ease-in-out, @transition-time padding-bottom ease-in-out;
