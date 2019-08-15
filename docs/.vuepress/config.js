@@ -28,6 +28,7 @@ module.exports = {
                     '/components/alert',
                     '/components/link',
                     '/components/directive',
+                    '/components/radio',
                 ],
             },
         ],

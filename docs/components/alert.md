@@ -73,7 +73,9 @@
 </div>
 </demo>
 
-## 3. Attributes
+## 3. API
+
+#### props
 
 <br>
 
