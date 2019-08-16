@@ -4,14 +4,56 @@
 // Prefix
 @css-prefix : vu-;
 @css-prefix-iconfont : vu-icon;
-
 // Color
-@primary-color : #2196f3;
+
+@red: #e54d42; // 嫣红
+@red-light: #fadbd9;
+
+@orange: #f37b1d; // 桔橙
+@orange-light: #fde6d2;
+
+@yellow: #fbbd08; // 明黄
+@yellow-light: #fef2ce;
+
+@olive: #8dc63f; // 橄榄
+@olive-light: #e8f4d9;
+
+@green: #39b54a; // 森绿
+@green-light: #d7f0db;
+
+@cyan: #1cbbb4; // 天青
+@cyan-light: #d2f1f0;
+
+@blue: #0081ff; // 海蓝
+@blue-light: #cce6ff;
+
+@purple: #6739b6; // 姹紫
+@purple-light: #e1d7f0;
+
+@mauve: #9c26b0; //木槿
+@mauve-light: #ebd4ef;
+
+@pink: #e03997; // 桃粉
+@pink-light: #f9d7ea;
+
+@brown: #a5673f; // 棕褐
+@brown-light: #ede1d9;
+
+@grey: #8799a3; // 玄灰
+@grey-light: #e7ebed;
+
+@gray: #f0f0f0; // 草灰
+@white: #fff;
+@white-light: #fafafa;
+@black: #333;
+
+@primary-color : @blue; // 海蓝 blue
 @info-color : #2db7f5; // 宝石蓝
-@success-color : #4caf50;
+@info-light-color : #b3d8ff;
+@success-color : @green; // 森绿 green
 @processing-color : @primary-color;
-@warning-color : #ff9900;
-@error-color : #f44336;
+@warning-color : @orange; // 橘橙 orange
+@error-color : @red; // 嫣红 red
 @normal-color : #e6ebf1;
 @link-color : #2D8cF0;
 @link-hover-color : tint(@link-color, 20%);
@@ -20,8 +62,6 @@
 @tooltip-color : #fff;
 @subsidiary-color : #808695;
 @rate-star-color : #f5a623;
-@white: #fff;
-@black: #000;
 
 // Base
 @body-background : #fff;
@@ -72,7 +112,9 @@
 // Shadow
 @shadow-color : rgba(0, 0, 0, .2);
 @shadow-base : @shadow-down;
-@shadow-card : 0 1px 1px 0 rgba(0,0,0,.1);
+@shadow-card :  0 2px 12px 0 rgba(0,0,0,.1);
+// @shadow-card :  0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+
 @shadow-up : 0 -1px 6px @shadow-color;
 @shadow-down : 0 1px 6px @shadow-color;
 @shadow-left : -1px 0 6px @shadow-color;
@@ -103,9 +145,9 @@
 @btn-primary-color : #fff;
 @btn-primary-bg : @primary-color;
 
-@btn-ghost-color : @text-color;
-@btn-ghost-bg : #fff;
-@btn-ghost-border : @border-color-base;
+@btn-light-color : @text-color;
+@btn-light-bg : #fff;
+@btn-light-border : @border-color-base;
 
 @btn-circle-size : 32px;
 @btn-circle-size-large : 36px;

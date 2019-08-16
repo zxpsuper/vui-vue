@@ -1,0 +1,43 @@
+@card-prefix-cls: ~'@{css-prefix}card';
+
+.@{card-prefix-cls} {
+    background: #fff;
+    // border-radius: @border-radius-small;
+    font-size: @font-size-base;
+    position: relative;
+    color: @black;
+    //overflow: hidden;
+    transition: all @transition-time @ease-in-out;
+
+    &-bordered {
+        border: 1px solid @border-color-base;
+        border-color: @border-color-split;
+    }
+
+    &-shadow-always {
+        box-shadow: @shadow-card;
+    }
+
+    &&-shadow-hover:hover {
+        box-shadow: @shadow-card;
+        border-color: #eee;
+    }
+
+    &&-shadow-always:hover {
+        box-shadow: @shadow-card;
+    }
+
+    &-head {
+        .content-header;
+    }
+
+    &-extra {
+        position: absolute;
+        right: 16px;
+        top: 14px;
+    }
+
+    &-body {
+        padding: 16px;
+    }
+}

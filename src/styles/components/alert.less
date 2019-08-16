@@ -1,16 +1,17 @@
-@alert-prefix-cls: ~"@{css-prefix}alert";
-@icon-prefix-cls: ~"@{css-prefix}icon";
+@alert-prefix-cls: ~'@{css-prefix}alert';
+@icon-prefix-cls: ~'@{css-prefix}icon';
 
-.@{alert-prefix-cls}{
+.@{alert-prefix-cls} {
     position: relative;
     padding: 8px 48px 8px 16px;
-    border-radius: @border-radius-small;
-    color: @text-color;
+    // border-radius: @border-radius-small;
+    color: @white;
     font-size: @font-size-small;
     line-height: 16px;
     margin-bottom: 10px;
+    z-index: 10;
 
-    &&-with-icon{
+    &&-with-icon {
         padding: 8px 48px 8px 38px;
     }
 
@@ -23,72 +24,91 @@
 
     &-desc {
         font-size: @font-size-small;
-        color: @text-color;
+        color: @white-light;
         line-height: 21px;
         display: none;
         text-align: justify;
     }
 
     &-success {
-        border: @border-width-base @border-style-base ~`colorPalette("@{success-color}", 3)`;
         //background-color: tint(@success-color, 90%);
-        background-color: ~`colorPalette("@{success-color}", 1)`;
-        .@{alert-prefix-cls}-icon {
-            color: @success-color;
-        }
+        background-color: ~`colorPalette('@{success-color}', 5) `;
+        // .@{alert-prefix-cls}-icon {
+        //     color: @success-color;
+        // }
     }
 
     &-info {
-        border: @border-width-base @border-style-base ~`colorPalette("@{primary-color}", 3)`;
+        position: relative;
         //background-color: tint(@primary-color, 90%);
-        background-color: ~`colorPalette("@{primary-color}", 2)`;
-        .@{alert-prefix-cls}-icon {
-            color: @primary-color;
-        }
+        background-color: ~`colorPalette('@{primary-color}', 5) `;
+        // background-color: @primary-color;
+        // .@{alert-prefix-cls}-icon {
+        //     color: @primary-color;
+        // }
     }
 
     &-warning {
-        border: @border-width-base @border-style-base ~`colorPalette("@{warning-color}", 3)`;
         //background-color: tint(@warning-color, 90%);
-        background-color: ~`colorPalette("@{warning-color}", 1)`;
-        .@{alert-prefix-cls}-icon {
-            color: @warning-color;
-        }
+        background-color: ~`colorPalette('@{warning-color}', 5) `;
     }
 
     &-error {
-        border: @border-width-base @border-style-base ~`colorPalette("@{error-color}", 3)`;
         //background-color: tint(@error-color, 90%);
-        background-color: ~`colorPalette("@{error-color}", 1)`;
-        .@{alert-prefix-cls}-icon {
-            color: @error-color;
-        }
+        background-color: ~`colorPalette('@{error-color}', 5) `;
     }
-
+    .@{alert-prefix-cls}-icon {
+        color: @white;
+    }
+    &::after {
+        content: ' ';
+        display: block;
+        background-color: inherit;
+        filter: blur(4px);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 4px;
+        left: 4px;
+        z-index: -1;
+        opacity: 0.4;
+        transform-origin: 0 0;
+        border-radius: inherit;
+        transform: scale(1);
+    }
     &-close {
         .content-close(-3px);
+        color: @white;
+        .@{icon-prefix-cls}-ios-close {
+            color: @white;
+            &:hover {
+                color: #f8f8f8;
+            }
+        }
+        &:hover {
+            color: #f8f8f8;
+        }
     }
 
     &-with-desc {
         padding: 16px;
         position: relative;
-        border-radius: @border-radius-small;
         margin-bottom: 10px;
-        color: @text-color;
+        color: @white;
         line-height: 1.5;
     }
 
-    &-with-desc&-with-icon{
+    &-with-desc&-with-icon {
         padding: 16px 16px 16px 69px;
     }
 
-    &-with-desc &-desc{
+    &-with-desc &-desc {
         display: block;
     }
 
     &-with-desc &-message {
         font-size: 14px;
-        color: @title-color;
+        color: @white;
         display: block;
     }
 
@@ -99,7 +119,7 @@
         font-size: 28px;
     }
 
-    &-with-banner{
+    &-with-banner {
         border-radius: 0;
     }
 }
