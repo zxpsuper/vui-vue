@@ -1,5 +1,6 @@
 import { directive as clickOutside } from './click-outside';
 import resize from './resize';
+import lazyLoad from './lazyLoad';
 import mouseWheel from './mousewheel';
 const directives = {
     'click-outside': clickOutside,
@@ -12,5 +13,6 @@ export default {
             const directive = directives[key];
             Vue.directive(key, directive);
         }
+        Vue.directive('lazy', lazyLoad(Vue));
     },
 };
