@@ -21,6 +21,12 @@ vui 上传文件组件。
 <Upload action="https://github.com/zxpsuper" />
 ```
 
+-   `name` 设置 上传文件字段名
+
+```html
+<Upload action="https://github.com/zxpsuper" name="suporka" />
+```
+
 -   支持发送 cookie 凭证信息
 
 ```html
@@ -42,6 +48,7 @@ vui 上传文件组件。
 | 参数            |         说明         |     类型 | 可选值 |  默认值 |
 | :-------------- | :------------------: | -------: | :----: | ------: |
 | action          |       上传路径       |   string |   --   |       / |
+| name            |    上传文件字段名    |   string |   --   |    file |
 | withCredentials | 发送 cookie 凭证信息 |  boolean |   --   |   false |
 | multiple        |       是否多选       |  boolean |   --   |   false |
 | beforeUpload    |   上传之前执行函数   | Function |   --   | ()=> {} |

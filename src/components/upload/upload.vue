@@ -38,6 +38,10 @@ export default {
             type: Boolean,
             default: false,
         },
+        name: {
+            type: String,
+            default: 'file',
+        },
     },
     methods: {
         triggle() {
@@ -48,7 +52,7 @@ export default {
             let formData = new FormData();
             let files = e.target.files;
             for (let i = 0; i < files.length; i++) {
-                formData.append('file', files[i]);
+                formData.append(this.name, files[i]);
             }
             let config = {
                 headers: {
