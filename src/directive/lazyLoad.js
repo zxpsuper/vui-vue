@@ -6,11 +6,13 @@ const lazyLoad = function(Vue) {
         var scrollTop =
             document.documentElement.scrollTop || document.body.scrollTop; //滚动条距离顶部高度
         for (var i = 0; i < img.length; i++) {
-            if (img[i].getAttribute('data-src-show')) continue;
+            if (img[i].getAttribute('data-image-show')) continue;
+            console.log(i);
             if (img[i].offsetTop < seeHeight + scrollTop) {
+                console.log(img[i].offsetTop, seeHeight, scrollTop);
                 if (img[i].getAttribute('src') == Vue.$vuiLazyLoad.img) {
                     img[i].src = img[i].getAttribute('data-src');
-                    img[i].setAttribute('data-src-show', 'true');
+                    img[i].setAttribute('data-image-show', 'true');
                 }
             }
         }
@@ -48,10 +50,10 @@ const lazyLoad = function(Vue) {
             el.setAttribute('data-src', binding.value);
             Vue.$vuiLazyLoad.imgLength++;
         },
-        inserted(el, binding) {
+        inserted(el) {
             if (IntersectionObserver) lazyImageObserver.observe(el);
         },
-        unbind(el, binding) {
+        unbind() {
             Vue.$vuiLazyLoad.imgLength--;
             if (!Vue.$vuiLazyLoad.imgLength)
                 window.removeEventListener('scroll', throttle(lazyload, 800));

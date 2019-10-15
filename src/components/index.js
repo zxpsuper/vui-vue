@@ -7,6 +7,7 @@ import RadioGroup from './radio-group';
 import BackTop from './back-top';
 import Card from './card';
 import Button from './button';
+import Upload from './upload';
 const components = {
     Icon,
     Alert,
@@ -17,6 +18,7 @@ const components = {
     BackTop,
     Card,
     Button,
+    Upload,
 };
 export default {
     install(Vue) {

@@ -44,7 +44,7 @@ function notice(
     const iconType = iconTypes[type];
 
     // if loading
-    const loadCls = type === 'loading' ? ' ivu-load-loop' : '';
+    const loadCls = type === 'loading' ? 'vu-load-loop' : '';
 
     let instance = getMessageInstance();
 

@@ -31,6 +31,7 @@ module.exports = {
                     '/components/radio',
                     '/components/card',
                     '/components/button',
+                    '/components/upload',
                 ],
             },
         ],

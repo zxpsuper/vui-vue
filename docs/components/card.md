@@ -62,4 +62,14 @@ vui 内容的基本容器。
 </div>
 </demo>
 
+## 2. API
+
+#### props
+
+| 参数   |     说明     |    类型 |        可选值         | 默认值 |
+| :----- | :----------: | ------: | :-------------------: | -----: |
+| title  |     标题     |  string |          --           |     '' |
+| shadow | 是否携带阴影 |  string | always, hover, nerver | nerver |
+| border |  是否待边框  | boolean |      true, false      |   true |
+
 <BackTop />
