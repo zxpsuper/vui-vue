@@ -29,6 +29,8 @@ module.exports = {
                     '/components/link',
                     '/components/directive',
                     '/components/radio',
+                    '/components/card',
+                    '/components/button',
                 ],
             },
         ],

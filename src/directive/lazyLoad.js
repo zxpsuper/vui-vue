@@ -27,7 +27,6 @@ const lazyLoad = function(Vue) {
         lazyImageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry, index) => {
                 let lazyImage = entry.target;
-                console.log(lazyImage, 'lazyImage');
                 // 如果元素可见
                 if (entry.intersectionRatio > 0) {
                     if (lazyImage.getAttribute('src') == Vue.$vuiLazyLoad.img) {
@@ -62,7 +61,6 @@ const lazyLoad = function(Vue) {
 
 export default lazyLoad;
 
-// console.log(el);
 function throttle(event, time) {
     let timer = null;
     return function(...args) {

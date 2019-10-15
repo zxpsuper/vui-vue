@@ -1,3 +1,14 @@
 .tip.custom-block p {
-  line-height: 2.5
+    line-height: 2.5;
+}
+
+div[class*='language-'] {
+    border-radius: 0 !important;
+}
+
+@media (max-width: 419px) {
+    .theme-default-content div[class*='language-'] {
+        margin: 0 !important;
+        border-radius: 0;
+    }
 }

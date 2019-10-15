@@ -80,6 +80,41 @@ vui 内部集成一些指令以供使用
 </div>
 </demo>
 
+## 4. v-long-press
+
+<br>
+
+长按触发指令，`v-long-press` 使用即可，默认设置长按时间为 1s
+
+<br>
+
+<Button v-long-press="longPress" type="primary">长按点击测试</Button>
+
+## 5. v-lazy
+
+<br>
+
+图片懒加载自定义指令, `v-lazy` 使用即可。默认的占位图是小皮咖的头像，如果你想自定义修改，修改`Vue.$vuiLazyLoad.img`即可实现
+
+```
+Vue.$vuiLazyLoad.img = '你的占位图url';
+```
+
+```html
+<img
+    v-lazy="'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'"
+/>
+```
+
+<br>
+<img v-lazy="'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'" />
+
+<img v-lazy="'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg'" />
+
+<img v-lazy="'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg'" />
+
+<img v-lazy="'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'" />
+
 <script>
 export default {
     data() {
@@ -109,6 +144,9 @@ export default {
         clickInner() {
             this.text = '你点击了内部'
         },
+        longPress() {
+            this.$Message.success('长按点击成功')
+        }
     }
 }
 </script>
@@ -124,3 +162,5 @@ export default {
     height: 200px
 }
 </style>
+
+<BackTop />
