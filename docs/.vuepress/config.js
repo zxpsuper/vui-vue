@@ -32,6 +32,7 @@ module.exports = {
                     '/components/card',
                     '/components/button',
                     '/components/upload',
+                    '/components/switch',
                 ],
             },
         ],

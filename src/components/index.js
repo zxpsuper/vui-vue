@@ -8,6 +8,7 @@ import BackTop from './back-top';
 import Card from './card';
 import Button from './button';
 import Upload from './upload';
+import SwitchButton from './switch';
 const components = {
     Icon,
     Alert,
@@ -19,6 +20,7 @@ const components = {
     Card,
     Button,
     Upload,
+    SwitchButton,
 };
 export default {
     install(Vue) {

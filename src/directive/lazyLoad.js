@@ -1,13 +1,13 @@
 const lazyLoad = function(Vue) {
     var img = document.getElementsByTagName('img');
     function lazyload() {
+        console.log('滚动lazy');
         //监听页面滚动事件
         var seeHeight = window.innerHeight; //可见区域高度
         var scrollTop =
             document.documentElement.scrollTop || document.body.scrollTop; //滚动条距离顶部高度
         for (var i = 0; i < img.length; i++) {
             if (img[i].getAttribute('data-image-show')) continue;
-            console.log(i);
             if (img[i].offsetTop < seeHeight + scrollTop) {
                 console.log(img[i].offsetTop, seeHeight, scrollTop);
                 if (img[i].getAttribute('src') == Vue.$vuiLazyLoad.img) {
@@ -23,7 +23,7 @@ const lazyLoad = function(Vue) {
         imgLength: 0,
     };
 
-    var lazyImageObserver;
+    var lazyImageObserver, evenFunction;
 
     if (IntersectionObserver) {
         lazyImageObserver = new IntersectionObserver((entries, observer) => {
@@ -40,8 +40,9 @@ const lazyLoad = function(Vue) {
         });
     } else {
         lazyload(); //页面载入完毕加载可是区域内的图片
-        window.removeEventListener('scroll', throttle(lazyload, 800));
-        window.addEventListener('scroll', throttle(lazyload, 800));
+        evenFunction = debounce(lazyload, 800);
+        window.removeEventListener('scroll', evenFunction);
+        window.addEventListener('scroll', evenFunction);
     }
     return {
         name: 'lazy',
@@ -55,22 +56,21 @@ const lazyLoad = function(Vue) {
         },
         unbind() {
             Vue.$vuiLazyLoad.imgLength--;
-            if (!Vue.$vuiLazyLoad.imgLength)
-                window.removeEventListener('scroll', throttle(lazyload, 800));
+            if (!Vue.$vuiLazyLoad.imgLength && evenFunction)
+                window.removeEventListener('scroll', evenFunction);
         },
     };
 };
 
 export default lazyLoad;
 
-function throttle(event, time) {
+function debounce(event, time) {
     let timer = null;
     return function(...args) {
-        if (!timer) {
-            timer = setTimeout(() => {
-                timer = null;
-                event.apply(this, args);
-            }, time);
-        }
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+            timer = null;
+            event.apply(this, args);
+        }, time);
     };
 }
