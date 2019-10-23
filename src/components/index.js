@@ -9,6 +9,7 @@ import Card from './card';
 import Button from './button';
 import Upload from './upload';
 import SwitchButton from './switch';
+import Throttle from './throttle';
 const components = {
     Icon,
     Alert,
@@ -21,6 +22,7 @@ const components = {
     Button,
     Upload,
     SwitchButton,
+    Throttle,
 };
 export default {
     install(Vue) {

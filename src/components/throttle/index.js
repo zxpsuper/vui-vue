@@ -3,7 +3,7 @@
  * @Author: super
  * @Date: 2019-04-09 14:21:18
  * @Last Modified by: super
- * @Last Modified time: 2019-10-23 15:55:01
+ * @Last Modified time: 2019-10-23 16:01:45
  */
 const debounce = (func, time, isDebounce, ctx) => {
     var timer, lastCall, rtn;
@@ -50,7 +50,6 @@ export default {
     },
     render() {
         const vnode = this.$slots.default[0];
-        console.log(vnode);
         this.eventKeys.forEach(key => {
             const target = vnode.data.on[key];
             if (target === this.originMap[key] && this.debouncedMap[key]) {
