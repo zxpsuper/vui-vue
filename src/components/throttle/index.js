@@ -3,8 +3,9 @@
  * @Author: super
  * @Date: 2019-04-09 14:21:18
  * @Last Modified by: super
- * @Last Modified time: 2019-10-23 16:01:45
+ * @Last Modified time: 2019-10-24 16:37:43
  */
+
 const debounce = (func, time, isDebounce, ctx) => {
     var timer, lastCall, rtn;
     if (isDebounce) {
@@ -46,7 +47,6 @@ export default {
         this.eventKeys = this.events.split(',');
         this.originMap = {};
         this.debouncedMap = {};
-        this.created = 0;
     },
     render() {
         const vnode = this.$slots.default[0];

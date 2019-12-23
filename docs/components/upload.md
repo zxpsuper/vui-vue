@@ -18,25 +18,25 @@ vui 上传文件组件。
 -   `action` 设置 上传路径
 
 ```html
-<Upload action="https://github.com/zxpsuper" />
+<Upload action="https://imgkr.com/api/files/upload" />
 ```
 
 -   `name` 设置 上传文件字段名
 
 ```html
-<Upload action="https://github.com/zxpsuper" name="suporka" />
+<Upload action="https://imgkr.com/api/files/upload" name="file" />
 ```
 
 -   支持发送 cookie 凭证信息
 
 ```html
-<Upload action="https://github.com/zxpsuper" withCredentials />
+<Upload action="https://imgkr.com/api/files/upload" withCredentials />
 ```
 
 -   支持多选
 
 ```html
-<Upload action="https://github.com/zxpsuper" withCredentials multiple />
+<Upload action="https://imgkr.com/api/files/upload" withCredentials multiple />
 ```
 
 <Upload/>
