@@ -128,3 +128,22 @@
         .btn-group-vertical(@btn-prefix-cls);
     }
 }
+
+.vui-ripple {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 100%;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+.vui-ripple.show {
+    animation: vuiripple 0.75s ease-out;   
+}
+
+@keyframes vuiripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}

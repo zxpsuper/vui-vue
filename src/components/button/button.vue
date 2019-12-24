@@ -7,7 +7,11 @@
         :style="styless"
     >
         <Icon class="ivu-load-loop" type="ios-loading" v-if="loading"></Icon>
-        <Icon :type="icon" :custom="customIcon" v-if="(icon || customIcon) && !loading"></Icon>
+        <Icon
+            :type="icon"
+            :custom="customIcon"
+            v-if="(icon || customIcon) && !loading"
+        ></Icon>
         <span v-if="showSlot" ref="slot">
             <slot></slot>
         </span>
@@ -164,8 +168,34 @@ export default {
     },
     methods: {
         // Ctrl or CMD and click, open in new window when use `to`
-        handleClickLink(event) {
-            this.$emit('click', event);
+        handleClickLink(e) {
+            this.$emit('click', e);
+            if (this.color !== 'null') {
+                var target = e.target;
+                var rect = target.getBoundingClientRect();
+                var ripple = target.querySelector('.vui-ripple');
+                if (!ripple) {
+                    ripple = document.createElement('span');
+                    ripple.className = 'vui-ripple';
+                    ripple.style.height = ripple.style.width =
+                        Math.max(rect.width, rect.height) + 'px';
+                    target.appendChild(ripple);
+                }
+                ripple.classList.remove('show');
+                var top =
+                    e.pageY -
+                    rect.top -
+                    ripple.offsetHeight / 2 -
+                    document.body.scrollTop;
+                var left =
+                    e.pageX -
+                    rect.left -
+                    ripple.offsetWidth / 2 -
+                    document.body.scrollLeft;
+                ripple.style.top = top + 'px';
+                ripple.style.left = left + 'px';
+                ripple.classList.add('show');
+            }
             // const openInNewWindow = event.ctrlKey || event.metaKey;
             // this.handleCheckClick(event, openInNewWindow);
         },
@@ -176,5 +206,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
