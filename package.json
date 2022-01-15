@@ -50,7 +50,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.0",
     "postcss-loader": "^2.1.6",
     "sass-loader": "^7.1.0",
-    "shelljs": "^0.8.3",
+    "shelljs": "^0.8.5",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "url-loader": "^1.1.2",
